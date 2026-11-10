@@ -1,7 +1,17 @@
-# Shoot Brief — deploy notes
+# Shoot Brief — Gabriel Greening Photography
 
-1. Formspree: endpoint is already set (https://formspree.io/f/mljjqnrn). If you have not yet, click the confirmation link Formspree emailed to inquiries@ggreeningphotography.com, or submissions will be held.
-2. Sample photos: export web-size JPGs (~1600px long edge, under 400 KB) into /samples and list them in SAMPLES in index.html.
-3. Host: drag this folder onto app.netlify.com/drop (free). Rename the site to something like ggreening-book.
-   Optional: in Netlify → Domain settings, add book.ggreeningphotography.com and create the CNAME it gives you at your domain registrar.
-4. Link it: Adobe Portfolio → Pages → Add Link → "Book a shoot" → your Netlify URL. Paste the same URL in your Instagram bio.
+Client intake page: https://book.ggreeningphotography.com (also https://ggreening-stack.github.io/shoot-brief/)
+
+## How it works
+- Static page, hosted on GitHub Pages. Every push to `main` redeploys automatically in about a minute (see `.github/workflows/pages.yml`).
+- Submissions post to Formspree (`FORM_ENDPOINT` near the top of the script in `index.html`) and arrive by email at inquiries@ggreeningphotography.com with reply-to set to the client.
+- Custom domain is set in the repo's Settings → Pages; DNS is a CNAME at Namecheap: `book` → `ggreening-stack.github.io`.
+
+## Updating sample photos
+1. Export web-size JPGs (about 1600px on the long edge, under 400 KB) into `samples/`.
+2. List them in the `SAMPLES` block in `index.html` by shoot type, e.g.
+   `product:[{file:"latte-art.jpg", caption:"Pour & latte art", exif:"85mm · f/2.8"}]`
+3. Commit and push. Types with no photos keep the color-study placeholders.
+
+## Changing copy, pricing or the email
+Everything is in `index.html`: `RATES` (starting prices shown to individual clients), `BUDGETS`, `USAGE`, and the email address appears twice in the markup.
