@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Plan a photo shoot with Gabriel Greening Photography in Seattle: shoot type, budget, location, look and usage.">
+<title>Gabriel Greening Shoot Brief</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+*{margin:0}
+/* Layout: contact-sheet intake — numbered form on the left, a live "call sheet" summary pinned on the right */
+:root{
+  --bg:#F3F0EE; --surface:#FAF8F6; --ink:#2C272B; --muted:#746D74; --line:#D8D2D2;
+  --accent:#453C44; --accent-ink:#F3EEEC; --safelight:#8B7A72; --chip:#E7E1E0;
+  --display:"Manrope", "Avenir Next", system-ui, sans-serif;
+  --body:"Instrument Sans", "Helvetica Neue", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#211D21; --surface:#2A252A; --ink:#ECE6E5; --muted:#A098A0; --line:#3B353B;
+  --accent:#DDD5D4; --accent-ink:#211D21; --safelight:#B8A79C; --chip:#332D33; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#211D21; --surface:#2A252A; --ink:#ECE6E5; --muted:#A098A0; --line:#3B353B;
+  --accent:#DDD5D4; --accent-ink:#211D21; --safelight:#B8A79C; --chip:#332D33; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:1160px;margin:0 auto}
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font:600 12px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.brand img{height:40px;width:40px;display:block;border-radius:50%}
+h1{font:800 clamp(32px,5.5vw,54px)/1.02 var(--display);margin:10px 0 0;letter-spacing:-.025em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--muted);font-weight:600}
+.lede{max-width:46ch;color:var(--muted);margin:0}
+.tabs{display:flex;gap:6px;margin-top:18px}
+.tabs button{font:500 13px var(--mono);background:none;border:1px solid var(--line);color:var(--muted);padding:7px 12px;border-radius:99px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;margin-top:32px;align-items:start}
+@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+section.step{display:grid;grid-template-columns:56px minmax(0,1fr);gap:4px 16px;padding:26px 0;border-bottom:1px solid var(--line)}
+@media (max-width:520px){section.step{grid-template-columns:minmax(0,1fr)}}
+.frame{font:500 12px/1 var(--mono);color:var(--safelight);padding-top:8px;letter-spacing:.06em}
+h2{font:700 24px/1.15 var(--display);margin:0 0 4px}
+.hint{color:var(--muted);margin:0 0 16px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--chip);border:1px solid transparent;font-weight:500;font-size:15px;transition:background .15s}
+.chip small{font:400 11px var(--mono);color:var(--muted)}
+.chip input:checked + span{background:var(--accent);color:var(--accent-ink);}
+.chip input:checked + span small{color:inherit;opacity:.8}
+.chip input:focus-visible + span{outline:2px solid var(--safelight);outline-offset:2px}
+.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:520px){.fields{grid-template-columns:minmax(0,1fr)}}
+.fields .full{grid-column:1/-1}
+label.f{display:flex;flex-direction:column;gap:6px;font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{font:400 16px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:10px 12px;width:100%;text-transform:none;letter-spacing:0}
+textarea{min-height:90px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.sub{margin-top:16px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px;margin-top:14px}
+.check input{margin-top:4px;accent-color:var(--accent)}
+/* contact sheet */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tile{position:relative;border-radius:6px;overflow:hidden;cursor:pointer;background:var(--chip);border:2px solid transparent;text-align:left;padding:0;color:inherit;font:inherit}
+.tile .img{aspect-ratio:4/5;width:100%;display:block;object-fit:cover;max-width:100%}
+.tile .cap{padding:8px 10px 10px;display:flex;flex-direction:column;gap:2px}
+.tile .cap b{font-weight:600;font-size:14px}
+.tile .cap code{font:400 11px var(--mono);color:var(--muted)}
+.tile .num{position:absolute;top:6px;left:8px;font:500 11px var(--mono);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.tile[aria-pressed="true"]{border-color:var(--ink)}
+.tile[aria-pressed="true"]::after{content:"✓ Picked";position:absolute;top:6px;right:6px;background:var(--ink);color:var(--bg);font:500 11px var(--mono);padding:3px 7px;border-radius:4px}
+.tile:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{font:400 12px var(--mono);color:var(--muted);margin-top:12px}
+/* call sheet */
+aside.callsheet{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+@media (max-width:900px){aside.callsheet{position:static}}
+.cs-head{display:flex;justify-content:space-between;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;border-bottom:1px dashed var(--line)}
+dl{margin:14px 0 0;display:grid;grid-template-columns:92px minmax(0,1fr);gap:9px 12px;font-size:14px}
+dt{font:500 11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding-top:2px}
+dd{margin:0;overflow-wrap:anywhere}
+dd.empty{color:var(--muted)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;font:600 15px var(--body);padding:12px 18px;border-radius:10px;border:0;cursor:pointer;background:var(--accent);color:var(--accent-ink);width:100%;margin-top:18px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-top:8px}
+.btn:focus-visible{outline:2px solid var(--safelight);outline-offset:2px}
+.status{font-size:13px;margin-top:10px;color:var(--muted);min-height:1.2em}
+.status.err{color:var(--safelight)}
+.done{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;margin-top:24px}
+.done pre{white-space:pre-wrap;font:400 13px/1.5 var(--mono);background:var(--bg);padding:14px;border-radius:8px;overflow-x:auto}
+/* owner views */
+.panel{margin-top:32px}
+.inq{border-top:1px solid var(--line);padding:18px 0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 16px}
+.inq h3{margin:0;font:700 19px var(--display)}
+.inq .meta{font:400 12px var(--mono);color:var(--muted)}
+.inq p{margin:4px 0 0;font-size:14px;grid-column:1/-1}
+.pill{font:500 11px var(--mono);padding:3px 8px;border-radius:99px;background:var(--chip);white-space:nowrap;align-self:start}
+.empty-state{border:1px dashed var(--line);border-radius:12px;padding:28px;color:var(--muted);text-align:center}
+.upl{display:flex;flex-wrap:wrap;gap:12px;align-items:end;margin-bottom:20px}
+.upl label.f{min-width:160px}
+.tile .del{position:absolute;bottom:56px;right:6px;font:500 11px var(--mono);background:rgba(0,0,0,.6);color:#fff;border:0;border-radius:4px;padding:3px 7px;cursor:pointer}
+.price{margin-top:16px;padding:14px 16px;border-left:3px solid var(--safelight);background:var(--surface);border-radius:0 8px 8px 0;font-size:14px}
+.price b{font-family:var(--display);font-size:16px}
+.price ul{margin:6px 0 0;padding-left:18px}
+.price .tag{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--safelight);display:block;margin-bottom:4px}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:14px;font-size:14px}
+.contact code{font:500 14px var(--mono);user-select:all;overflow-wrap:anywhere}
+.mini{font:500 12px var(--mono);background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="brand"><img src="logo.png" alt="Gabriel Greening Photography logo" width="40" height="40"><span>Gabriel Greening Photography</span><span style="color:var(--muted)">Seattle</span></div>
+      <h1>Plan your <em>shoot</em>.</h1>
+    </div>
+    <div><p class="lede">Six quick sections. Pick the look you want from the contact sheet, and I'll come back with a quote within two business days.</p><div class="contact">Questions? <code>inquiries@ggreeningphotography.com</code><button type="button" class="mini" data-copy="inquiries@ggreeningphotography.com">Copy email</button></div></div>
+  </header>
+
+  <!-- CLIENT FORM -->
+  <div id="view-form">
+  <form id="brief" class="grid" novalidate>
+    <div>
+      <section class="step">
+        <div class="frame">FR 01</div>
+        <div>
+          <h2>What are we shooting?</h2>
+          <p class="hint">First, who are the photos for?</p>
+          <div class="chips" id="kinds"></div>
+          <p class="hint sub">Then pick the closest fit. You can choose more than one.</p>
+          <div class="chips" id="types"></div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="frame">FR 02</div>
+        <div>
+          <h2>Budget range</h2>
+          <p class="hint">A rough range helps me suggest the right package. Every session includes a fully edited gallery.</p>
+          <div class="chips" id="budgets"></div>
+          <div class="price" id="priceNote"></div>
+          <label class="check"><input type="checkbox" id="trade" name="trade"> <span>I run a local business and I'm open to a partial trade (gift cards or product) for a first shoot.</span></label>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="frame">FR 03</div>
+        <div>
+          <h2>Where and when</h2>
+          <p class="hint">A specific address helps me plan light. Indoor shoots may need a flash or studio rental.</p>
+          <div class="fields">
+            <label class="f full">Location or address<input type="text" id="location" placeholder="e.g. Your café on Queen Anne Ave N"></label>
+            <label class="f">Neighborhood
+              <select id="hood">
+                <option value="">Choose one</option>
+                <option>Capitol Hill</option><option>Queen Anne</option><option>Belltown</option><option>Downtown</option>
+                <option>Ballard</option><option>Fremont</option><option>South Lake Union</option><option>Columbia City</option>
+                <option>Other Seattle area</option><option>Studio (I'll book one)</option>
+              </select>
+            </label>
+            <label class="f">Preferred date<input type="date" id="date"></label>
+          </div>
+          <p class="hint sub">Time of day</p>
+          <div class="chips" id="times"></div>
+          <label class="check"><input type="checkbox" id="flex" checked> <span>My date is flexible by a week or two.</span></label>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="frame">FR 04</div>
+        <div>
+          <h2>Choose the look</h2>
+          <p class="hint" id="lookHint">Tap the frames closest to what you have in mind. They'll filter to the shoot type you picked above.</p>
+          <div class="sheet" id="sheet"></div>
+          <p class="note" id="sheetNote"></p>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="frame">FR 05</div>
+        <div>
+          <h2>How will you use the photos?</h2>
+          <p class="hint">This sets the usage license in your quote. Paid ads and packaging carry a higher license than social and web use.</p>
+          <div class="chips" id="usage"></div>
+        </div>
+      </section>
+
+      <section class="step">
+        <div class="frame">FR 06</div>
+        <div>
+          <h2>Your details</h2>
+          <p class="hint">So I can send your quote.</p>
+          <div class="fields">
+            <label class="f">Your name<input type="text" id="name" autocomplete="name" required></label>
+            <label class="f">Business (optional)<input type="text" id="biz" autocomplete="organization"></label>
+            <label class="f">Email<input type="email" id="email" autocomplete="email" required></label>
+            <label class="f">Phone (optional)<input type="tel" id="phone" autocomplete="tel"></label>
+            <label class="f full">Anything else?<textarea id="notes" placeholder="Menu items to feature, a launch date, links to photos you like…"></textarea></label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="callsheet" aria-live="polite">
+      <div class="cs-head"><span>Call sheet</span><span id="csNum">Draft</span></div>
+      <dl id="summary"></dl>
+      <button class="btn" type="submit" id="submitBtn">Send my shoot brief</button>
+      <div class="status" id="status"></div>
+    </aside>
+  </form>
+
+  <div class="done" id="done" hidden>
+    <h2 id="doneTitle">Brief sent.</h2>
+    <p class="hint" id="doneText">Here's a copy for your records.</p>
+    <pre id="donePre"></pre>
+    <div class="contact" id="doneContact" hidden>Send it to <code>inquiries@ggreeningphotography.com</code><button type="button" class="mini" data-copy="inquiries@ggreeningphotography.com">Copy email</button></div>
+    <button class="btn ghost" type="button" id="copyBtn" style="width:auto">Copy brief</button>
+    <button class="btn ghost" type="button" id="againBtn" style="width:auto">Start another</button>
+  </div>
+  </div>
+
+</div>
+
+<script>
+const TYPES=[
+  {id:"lifestyle",label:"Lifestyle"},{id:"product",label:"Product / food & drink"},
+  {id:"portrait",label:"Portrait / headshot"},{id:"action",label:"Action / sports"},{id:"event",label:"Event"}];
+/* ===== SETUP — the only two things to edit =====
+   1. FORM_ENDPOINT: create a free form at formspree.io, set its notification email
+      to inquiries@ggreeningphotography.com, then paste the endpoint URL here.
+   2. SAMPLES: drop photos into the /samples folder and list them here by shoot type.
+      Until a type has photos, clients see the color-study placeholders. */
+const FORM_ENDPOINT="https://formspree.io/f/mljjqnrn";
+const SAMPLES={
+  lifestyle:[],            // e.g. {file:"cafe-window.jpg", caption:"Window-light candid", exif:"35mm · f/1.8"}
+  product:[],
+  portrait:[],
+  action:[],
+  event:[]
+};
+const KINDS=[{id:"business",label:"My business",note:"café, brand, company"},{id:"personal",label:"Me or my group",note:"portraits, events, teams"}];
+// Published starting rates (ggreeningphotography.com/about). Shown to personal clients only.
+const RATES={lifestyle:[["Portrait / lifestyle session","from $175"]],portrait:[["Portrait session","from $175"],["Headshots","from $150"]],
+  event:[["Event coverage","from $225"]],action:[["Game coverage","from $175 per game"],["Team photos","from $50 per player"]],product:[]};
+const BUDGETS=[
+  {id:"u150",label:"Under $150",note:"mini session"},{id:"150-300",label:"$150–300",note:"1 hr"},
+  {id:"300-500",label:"$300–500",note:"1–2 hrs"},{id:"500-800",label:"$500–800",note:"half day"},
+  {id:"800+",label:"$800+",note:"full day / multi"},{id:"unsure",label:"Not sure yet",note:""}];
+const TIMES=["Early morning","Late morning","Midday","Afternoon","Golden hour","Evening / night"];
+const USAGE=[
+  {id:"website",label:"Website"},{id:"social",label:"Social media"},{id:"google",label:"Google / Yelp listing"},
+  {id:"menu",label:"Menu or in-store print"},{id:"ads",label:"Paid ads"},{id:"marketing",label:"Ongoing marketing re-use"},
+  {id:"press",label:"Press / PR"},{id:"personal",label:"Personal use"}];
+// Placeholder looks: each drawn with gradients until real photos are uploaded
+const LOOKS={
+  lifestyle:[["Window-light candid","35mm · f/1.8 · natural","linear-gradient(115deg,#f3e6cf 0 30%,#8a6a4d 30% 34%,#c9b49a 34% 100%)"],
+             ["Golden hour street","50mm · f/2 · backlit","radial-gradient(circle at 70% 30%,#ffd28a,#e08a3c 40%,#3b2a2a 90%)"],
+             ["Cozy interior","24mm · f/2.8 · tungsten","radial-gradient(circle at 30% 70%,#e9a95c 0 12%,#5b3a24 40%,#1d1410)"]],
+  product:[["Pour & latte art","85mm · f/2.8 · overhead","radial-gradient(circle at 50% 50%,#f6ead7 0 16%,#9a6a3f 17% 32%,#e8e1d6 33%)"],
+           ["Clean seamless","90mm · f/8 · strobe","linear-gradient(180deg,#fbfbfa 0 70%,#dcdcd8 100%)"],
+           ["Moody tabletop","85mm · f/4 · single light","radial-gradient(ellipse at 40% 45%,#b27a4a 0 10%,#3a2c24 35%,#0f0c0a 80%)"],
+           ["Flat lay","35mm · f/5.6 · top-down","conic-gradient(from 20deg,#d9c3a5,#7c9a86,#e9dccb,#a8583a,#d9c3a5)"]],
+  portrait:[["Natural light headshot","85mm · f/1.4 · window","radial-gradient(circle at 50% 40%,#d8b49a 0 18%,#9aa6a4 19% 60%,#6f7b79)"],
+            ["Low-key dramatic","85mm · f/2 · rim light","radial-gradient(circle at 45% 40%,#8c6a55 0 14%,#1b1b1d 45%)"],
+            ["Environmental portrait","35mm · f/2.8 · ambient","linear-gradient(160deg,#486b66,#c7a77f 55%,#2a2a2a)"]],
+  action:[["Freeze motion","70–200mm · 1/2000","linear-gradient(100deg,#1f3b66 0 40%,#e45c2b 40% 46%,#1f3b66 46%)"],
+          ["Panning blur","70–200mm · 1/30 pan","repeating-linear-gradient(90deg,#2b5c8a 0 6px,#5d8fbf 6px 14px)"],
+          ["Courtside wide","24mm · f/2.8 · 1/800","linear-gradient(180deg,#151c2b 0 45%,#c79a5d 45% 100%)"]],
+  event:[["Documentary candid","35mm · f/1.8 · no flash","linear-gradient(135deg,#4a4038,#a68b6d 50%,#2a241f)"],
+         ["Nightlife flash","24mm · bounce flash","radial-gradient(circle at 50% 45%,#f2e4d8 0 15%,#5a1e5e 45%,#0d0712)"],
+         ["Stage / DJ lighting","70–200mm · f/2.8","radial-gradient(circle at 20% 10%,#3fd0e0,transparent 40%),radial-gradient(circle at 80% 20%,#e0458f,transparent 45%),#0b0b14"]]
+};
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let picks=new Set();
+
+function chips(el,items,name,type){
+  el.innerHTML=items.map(it=>{const id=it.id||it, lab=it.label||it;
+    return `<label class="chip"><input type="${type}" name="${name}" value="${esc(id)}"><span>${esc(lab)}${it.note?` <small>${esc(it.note)}</small>`:""}</span></label>`}).join("");
+}
+chips($("#kinds"),KINDS,"kind","radio");
+chips($("#types"),TYPES,"type","checkbox");
+chips($("#budgets"),BUDGETS,"budget","radio");
+chips($("#times"),TIMES,"time","checkbox");
+chips($("#usage"),USAGE,"usage","checkbox");
+// realistic opening state, clearly a starting example the client changes
+document.querySelector('input[name=kind][value=business]').checked=true;
+document.querySelector('input[name=type][value=product]').checked=true;
+document.querySelector('input[name=usage][value=social]').checked=true;
+document.querySelector('input[name=usage][value=website]').checked=true;
+
+const vals=n=>[...document.querySelectorAll(`input[name=${n}]:checked`)].map(i=>i.value);
+const labelOf=(list,id)=>(list.find(x=>(x.id||x)===id)||{}).label||id;
+
+function lookList(){
+  const sel=vals("type"); const types=sel.length?sel:TYPES.map(t=>t.id);
+  const out=[];
+  types.forEach(t=>{
+    const real=SAMPLES[t]||[];
+    if(real.length) real.forEach((p,i)=>out.push({key:`p:${t}:${i}`,type:t,title:p.caption||labelOf(TYPES,t),exif:p.exif||"",src:"samples/"+p.file}));
+    else (LOOKS[t]||[]).forEach((l,i)=>out.push({key:`s:${t}:${i}`,type:t,title:l[0],exif:l[1],bg:l[2]}));
+  });
+  return out;
+}
+function renderSheet(){
+  const list=lookList(); let n=0;
+  $("#sheet").innerHTML=list.map(l=>{n++;
+    const media=l.src?`<img class="img" src="${esc(l.src)}" alt="${esc(l.title)}" loading="lazy">`:`<span class="img" style="background:${l.bg}" role="img" aria-label="${esc(l.title)} style placeholder"></span>`;
+    return `<button type="button" class="tile" data-key="${esc(l.key)}" data-title="${esc(l.title)}" aria-pressed="${picks.has(l.key)}"><span class="num">${String(n).padStart(2,"0")}A</span>${media}<span class="cap"><b>${esc(l.title)}</b><code>${esc(l.exif)}</code></span></button>`}).join("");
+  const anyPlaceholder=list.some(l=>!l.src);
+  $("#sheetNote").textContent=anyPlaceholder?"Frames shown as color studies are style placeholders for that look.":"";
+}
+$("#sheet").addEventListener("click",e=>{const t=e.target.closest(".tile"); if(!t)return;
+  const k=t.dataset.key; picks.has(k)?picks.delete(k):picks.add(k); t.setAttribute("aria-pressed",picks.has(k)); renderSummary();});
+
+function renderPrice(){
+  const kind=vals("kind")[0], types=vals("type"), el=$("#priceNote");
+  if(kind==="business"){
+    el.innerHTML='<span class="tag">Business shoots</span><b>Custom quote, built around your project.</b> Pricing depends on hours on site, number of final images, and how you\'ll use them (social and web use is licensed differently from paid ads or packaging). Pick the range that fits and I\'ll scope a package to it.';
+    return;}
+  const lines=[]; types.forEach(t=>(RATES[t]||[]).forEach(r=>{if(!lines.some(l=>l[0]===r[0]))lines.push(r)}));
+  if(types.includes("product")&&!lines.length){el.innerHTML='<span class="tag">Product shoots</span><b>Quoted per project.</b> Product and food work is priced by number of items and final images.';return;}
+  el.innerHTML='<span class="tag">Starting rates</span>'+(lines.length?'<ul>'+lines.map(([a,b])=>`<li>${esc(a)} <b>${esc(b)}</b></li>`).join("")+'</ul>':'Pick a shoot type above to see starting rates.')+'<div class="hint" style="margin:8px 0 0">Final price varies with location, length and deliverables.</div>';
+}
+function pickedTitles(){return [...document.querySelectorAll(".tile[aria-pressed=true]")].map(t=>t.dataset.title)}
+function brief(){
+  return {
+    kind:labelOf(KINDS,vals("kind")[0]||""),
+    types:vals("type").map(id=>labelOf(TYPES,id)),
+    budget:labelOf(BUDGETS,vals("budget")[0]||"")||"",
+    trade:$("#trade").checked,
+    location:$("#location").value.trim(), hood:$("#hood").value, date:$("#date").value,
+    times:vals("time"), flexible:$("#flex").checked,
+    looks:pickedTitles(), usage:vals("usage").map(id=>labelOf(USAGE,id)),
+    name:$("#name").value.trim(), biz:$("#biz").value.trim(), email:$("#email").value.trim(),
+    phone:$("#phone").value.trim(), notes:$("#notes").value.trim()
+  };
+}
+function fmtDate(d){if(!d)return"";const [y,m,dd]=d.split("-").map(Number);return new Date(y,m-1,dd).toLocaleDateString(undefined,{weekday:"short",month:"short",day:"numeric"})}
+function rows(b){
+  return [["For",b.kind],["Shoot",b.types.join(", ")],["Budget",b.budget+(b.trade?" · open to trade":"")],
+    ["Where",[b.location,b.hood].filter(Boolean).join(" · ")],
+    ["When",[fmtDate(b.date),b.times.join(", "),b.date&&b.flexible?"flexible":""].filter(Boolean).join(" · ")],
+    ["Look",b.looks.join(", ")],["Usage",b.usage.join(", ")],
+    ["Client",[b.name,b.biz].filter(Boolean).join(" · ")],["Contact",[b.email,b.phone].filter(Boolean).join(" · ")]];
+}
+function renderSummary(){
+  $("#summary").innerHTML=rows(brief()).map(([k,v])=>`<dt>${k}</dt><dd class="${v?"":"empty"}">${v?esc(v):"Not set"}</dd>`).join("");
+}
+function briefText(b){return "SHOOT BRIEF — Gabriel Greening Photography\n"+rows(b).map(([k,v])=>`${k.padEnd(8)} ${v||"—"}`).join("\n")+(b.notes?`\nNotes    ${b.notes}`:"")}
+
+$("#brief").addEventListener("input",()=>renderSummary());
+$("#brief").addEventListener("change",e=>{if(e.target.name==="type")renderSheet();if(e.target.name==="type"||e.target.name==="kind")renderPrice();renderSummary();});
+
+$("#brief").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const b=brief(), st=$("#status"); st.className="status";
+  const missing=[]; if(!b.types.length)missing.push("a shoot type"); if(!b.name)missing.push("your name");
+  if(!/^\S+@\S+\.\S+$/.test(b.email))missing.push("a valid email");
+  if(missing.length){st.className="status err";st.textContent="Add "+missing.join(", ")+" to send.";return;}
+  const btn=$("#submitBtn"); btn.disabled=true; st.textContent="Sending…";
+  let saved=false;
+  if(!FORM_ENDPOINT.includes("YOUR_FORM_ID")){
+    try{const r=await fetch(FORM_ENDPOINT,{method:"POST",headers:{"Accept":"application/json","Content-Type":"application/json"},
+      body:JSON.stringify({...b,_subject:`Shoot brief — ${b.name}${b.biz?" ("+b.biz+")":""}`,_replyto:b.email,brief:briefText(b)})});
+      saved=r.ok;}catch(err){saved=false;}
+  }
+  btn.disabled=false; st.textContent="";
+  $("#donePre").textContent=briefText(b);
+  if(saved){$("#doneTitle").textContent="Brief sent.";$("#doneText").textContent="Thanks, "+b.name.split(" ")[0]+". I'll reply to "+b.email+" with a quote within two business days. Here's a copy for your records.";}
+  else{$("#doneTitle").textContent="Almost done: send this to me.";$("#doneText").textContent="This page couldn't send your brief just now. Copy it below and email it to me, and I'll reply with a quote within two business days.";}
+  $("#doneContact").hidden=saved; $("#brief").hidden=true; $("#done").hidden=false; window.scrollTo({top:0,behavior:"smooth"});
+});
+$("#copyBtn").addEventListener("click",()=>{const t=$("#donePre").textContent;
+  navigator.clipboard.writeText(t).then(()=>{$("#copyBtn").textContent="Copied"},()=>{const r=document.createRange();r.selectNodeContents($("#donePre"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("#copyBtn").textContent="Selected — press copy"})});
+$("#againBtn").addEventListener("click",()=>{$("#brief").reset();picks.clear();$("#done").hidden=true;$("#brief").hidden=false;$("#copyBtn").textContent="Copy brief";renderSheet();renderPrice();renderSummary();});
+
+renderSheet(); renderPrice(); renderSummary();
+
+document.addEventListener("click",e=>{const b=e.target.closest("[data-copy]");if(!b)return;
+  navigator.clipboard.writeText(b.dataset.copy).then(()=>{b.textContent="Copied"},()=>{const c=b.previousElementSibling;const r=document.createRange();r.selectNodeContents(c);const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected"})});
+</script>
+
+</body>
+</html>
